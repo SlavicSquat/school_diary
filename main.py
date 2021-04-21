@@ -16,7 +16,9 @@ from flask import request
 from flask import abort
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+with open('s_k.txt', 'r', encoding='utf8') as f:
+    s_k = f.read()
+app.config['SECRET_KEY'] = s_k
 
 login_manager = LoginManager()
 login_manager.init_app(app)
