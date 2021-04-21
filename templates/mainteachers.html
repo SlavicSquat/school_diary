@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Учителя математики и русского языка:</h1>
+{% for item in data %}
+<div class="col-md6 border rounded">
+    <div>
+        <h1><a href="/page/{{ item[2] }}">{{item[0]}}</a></h1>
+    </div>
+    <div>
+        <h4>{{item[1]}}</h4>
+    </div>
+</div>
+<br>
+{% endfor %}
+{% endblock %}

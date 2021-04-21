@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ user.name }}</h1>
+<p>
+    {% if user.about==1%}
+    <h3>Директор</h3>
+    {% endif %}
+    {% if user.about==2%}
+    <h3>Завуч</h3>
+    {% endif %}
+    {% if user.about==3%}
+    <h3>Учитель</h3>
+    {% endif %}
+    {% if user.about==4%}
+    <h3>Ученик</h3>
+    {% endif %}
+</p>
+{% if user.about == 3 %}
+<h4>Преподаваемые предметы:</h4>
+{% for item in lessions %}
+<div>
+    <h6>{{item}}</h6>
+</div>
+{% endfor %}
+{% elif user.about == 4 %}
+<h4>Класс {{user.sub_info}}</h4>
+{% endif %}
+<p>
+
+</p>
+{% endblock %}

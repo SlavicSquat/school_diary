@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Регистрация</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+    <h3>{{form.sub_info.label}}</h3>
+        {{ form.sub_info(class="form") }}<br>
+        {% for error in form.sub_info.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    <p>
+        <a>{{ form.submit(type="submit", class="btn btn-primary") }}</a>
+        <a class="btn btn-danger" href="/">Назад</a>
+    </p>
+</form>
+
+{% endblock %}

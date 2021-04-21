@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+<nav class="navbar navbar-dark bg-light">
+    <h2>
+    {% for klass in classes %}
+        <a href="/schedule/{{klass}}">{{klass}}</a>
+    {% endfor %}
+    </h2>
+</nav>
+<br>
+
+{% if schedule == [] %}
+<h1>Расписание не завезли</h1>
+{% else %}
+    <div class="col-md6 border rounded">
+        <h3>Понедельник</h3>
+        {% for item in schedule %}
+            {% if item.day == 1 %}
+            <div>
+                {{item.lession.name}}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col-md6 border rounded">
+        <h3>Вторник</h3>
+        {% for item in schedule %}
+            {% if item.day == 2 %}
+            <div>
+                {{item.lession.name}}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col-md6 border rounded">
+        <h3>Среда</h3>
+        {% for item in schedule %}
+            {% if item.day == 3 %}
+            <div>
+                {{item.lession.name}}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col-md6 border rounded">
+        <h3>Четверг</h3>
+        {% for item in schedule %}
+            {% if item.day == 4 %}
+            <div>
+                {{item.lession.name}}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col-md6 border rounded">
+        <h3>Пятница</h3>
+        {% for item in schedule %}
+            {% if item.day == 5 %}
+            <div>
+                {{item.lession.name}}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col-md6 border rounded">
+        <h3>Суббота</h3>
+        {% for item in schedule %}
+            {% if item.day == 6 %}
+            <div>
+                {{item.lession.name}}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock %}
