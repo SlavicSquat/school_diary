@@ -18,7 +18,7 @@
     <div>
         Автор - <a href="/page/{{ item.user.id }}">{{item.user.name}}</a>, Дата написания - {{item.created_date}}
     </div>
-    {% if current_user.is_authenticated and current_user == item.user %}
+    {% if (current_user.is_authenticated and current_user == item.user) or (current_user.is_authenticated and current_user.about == 1) %}
     <div>
         <a href="/news/{{ item.id }}" class="btn btn-success">
             Изменить
