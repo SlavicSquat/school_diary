@@ -11,7 +11,7 @@ class RegTeach(FlaskForm):
 
 
 class RegStudent(FlaskForm):
-    radioclass = RadioField('aboba', choices=[('5А', '5А'), ('5Б', '5Б'), ('6А', '6А')], validators=[DataRequired()])
+    radioclass = RadioField('', choices=[('5А', '5А'), ('5Б', '5Б'), ('6А', '6А')], validators=[DataRequired()])
 
 
 class TSub(FlaskForm):
